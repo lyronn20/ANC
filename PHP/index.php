@@ -6,9 +6,10 @@
     <title>ANC</title>
 </head>
 <body>
-   
+
 </body>
 </html>
+
 <?php
     include 'connexionDB.php';
 ?>
