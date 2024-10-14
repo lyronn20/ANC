@@ -1,8 +1,3 @@
-function toggleMenu() {
-    var navLinks = document.getElementById('nav-links');
-    navLinks.classList.toggle('hidden');
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const carousels = document.querySelectorAll('.carousel');
 

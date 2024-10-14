@@ -1,0 +1,130 @@
+    /* Header */
+    #header {
+        background-color: #313335;
+        color: #e0e0e0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    header {
+        display: flex;
+        background-color: #313335;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s ease;
+    }
+    
+    a:hover {
+        color: goldenrod;
+    }
+    
+    h1 {
+        margin: 0;
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+    
+    h1 img {
+        width: 150px;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+    
+    h1 img:hover {
+        transform: scale(1.1);
+    }
+    
+    /* Navigation Links */
+    #nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    #nav-links li {
+        margin: 0 15px;
+    }
+    
+    #nav-links a {
+        text-decoration: none;
+        color: #e0e0e0;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+    
+    #nav-links a:hover {
+        color: goldenrod;
+    }
+    
+    /* Burger Menu */
+    .burger-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .burger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: #e0e0e0;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+    
+    /* Media Queries */
+    @media (max-width: 768px) {
+        header {
+            padding: 10px;
+        }
+    
+        h1 img {
+            width: 100px;
+        }
+    
+        #nav-links {
+            display: none;
+        }
+    
+        .burger-menu {
+            display: flex;
+        }
+    
+        .burger-menu.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+    
+        .burger-menu.active div:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .burger-menu.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    
+        #nav-links.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #313335;
+            width: 100%;
+            text-align: center;
+        }
+    
+        #nav-links li {
+            margin: 10px 0;
+        }
+    }

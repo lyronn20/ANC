@@ -2,12 +2,12 @@
 session_start();
 include 'connectionDB.php';
 
-$sql = "SELECT id, title, description, personnes, category_id, ville_id, image, liens FROM logements WHERE category_id = 1";
+$sql = "SELECT id, title, description, personnes, category_id, ville_id, image, liens FROM logements WHERE category_id = 2";
 $result = $conn->query($sql);
 
 $logements = [];
 if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
+    while($row = $result->fetch_assoc()) {
         $logements[] = $row;
     }
 }
@@ -20,18 +20,19 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style-appartement.css">
     <link rel="stylesheet" href="../CSS/header.css">
-    <title>Appartements</title>
-    <script src="../JS/script-apparteement.js"></script>
+    <link rel="stylesheet" href="../CSS/style-maison.css">
+    <link rel="stylesheet" href="../CSS/style-carrousel.css">
+    <script src="../JS/script-maison.js"></script>
     <link rel="icon" type="image/x-icon" href="logo/anc-Photoroom.png">
+    <title>Maisons</title>
 </head>
 <body>
     <div id="header">
         <?php include 'header.html'; ?>
     </div>
 
-    <h1>Liste des Appartements</h1>
+    <h1>Liste des Maisons</h1>
     <div class="container">
         <?php if (!empty($logements)): ?>
             <?php foreach ($logements as $logement): ?>
@@ -72,7 +73,7 @@ $conn->close();
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>Aucun Appartement trouvé</p>
+            <p>Aucune Maison trouvée</p>
         <?php endif; ?>
     </div>
 </body>

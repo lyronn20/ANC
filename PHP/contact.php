@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulaire de Contact</title>
+    <link rel="stylesheet" href="../CSS/style-contact.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="icon" type="image/x-icon" href="logo/anc-Photoroom.png">
+
+    <div id="header">
+        <?php include 'header.html'; ?>
+    </div>
 </head>
 <body>
-    <?php
-        include 'header.html';  
-    ?> 
     <h2>Contactez-nous</h2>
-    <form action="contact.php" method="post">
+
+    <form action="traitement.php" method="post">
         <label for="nom">Nom:</label><br>
         <input type="text" id="nom" name="nom" required><br>
         <label for="email">Email:</label><br>
